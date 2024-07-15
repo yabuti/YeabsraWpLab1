@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+        <h1 id="title"> Sign Up</h1>
+      <form action="">
+        <div class="input-group">
+            <div class="input-field" id="nameField">
+                <span class="fas fa-user"></span>
+                <input type="text" placeholder="yeab" id="text">
+            </div>
+            <div class="input-field">
+                <span class="fas fa-envelope"></span>
+                <input type="email" placeholder="yeab6789@gmail.com" id="email">
+            </div>
+            <div class="input-field">
+                <span class="fas fa-lock"></span>
+                <input type="password" placeholder="123456" id="password">
+            </div>
+            <p>forget password <a href="#">Click Here!</a> </p>
+        </div>
+        <div class="btn-field">
+            <button type="button" id="signupBtn" onclick="func()">Sign Up</button>
+            <button type="button" id="signinBtn" class="disable" onclick="func()">Sign in</button>
+
+        </div>
+      </form>
+    </div>
+  </div>  
+  <script>
+    let signupBtn= document.getElementById("signupBtn")
+    let signinBtn= document.getElementById("signinBtn")
+    let nameField= document.getElementById("nameField")
+    let title= document.getElementById("title")
+
+    signinBtn.onclick = function(){
+    nameField.style.maxHeight ="0";
+    title.innerHTML ="Sign In";
+    signupBtn.classList.add("disable");
+    signinBtn.classList.remove("disable")
+}
+
+signupBtn.onclick = function(){
+    nameField.style.maxHeight ="60";
+    title.innerHTML ="Sign Up";
+    signinBtn.classList.add("disable");
+    signupBtn.classList.remove("disable")
+}
+  </script>
+  <script>
+    function func(){
+var text= document.getElementById("name").value;
+var email= document.getElementById("email").value;
+var pass= document.getElementById("password").value;
+if(email=='yeab6789@gmail.com' && pass=='123456')
+{
+  alert("success fully")
+window.location.assign("index.html")
+}
+else{
+  alert("wrong entry invalid")
+}
+}
+  </script>
+</body>
+</html>
